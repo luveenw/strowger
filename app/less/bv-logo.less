@@ -1,0 +1,25 @@
+//
+// BV Logo: A branded Bazaarvoice, font-based logo.
+// --------------------------------------------------
+
+.brand-bv {
+  &:before {
+    display: block;
+    color: @bvGreen;
+    position: absolute;
+    font-family: "bvglyphsMedium";
+    content: "b";
+  }
+  &:after {
+    display: block;
+    color: @bvNavy;
+    font-family: "bvglyphsMedium";
+    content: "v";
+  }
+}
+
+.navbar-inverse, .btn-inverse {
+  .brand-bv:after {
+    color: @white;
+  }
+}

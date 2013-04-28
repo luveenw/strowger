@@ -1,0 +1,99 @@
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.tile {
+  padding: 8px 14px;
+  margin-bottom: @baseLineHeight;
+  background-color: @warningBackground;
+  #gradient > .vertical(@grayLightest, darken(@grayLightest, 3%));
+  border: 1px solid @grayLighter;
+  .border-radius(@panelBorderRadius);
+}
+
+.tile {
+  :first-child {
+  	margin-top: 0;
+  }
+  :last-child {
+  	margin-bottom: 0;
+  }
+}
+
+// Adjust close link position
+.tile .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: @baseLineHeight;
+}
+
+
+// Alternate styles
+// -------------------------
+
+.tile-purple {
+  #gradient > .vertical(lighten(@purpleLight, 8%), lighten(@purpleLight, 4%));
+  border-color: darken(@purpleLight, 10%);
+}
+
+.tile-pink {
+  #gradient > .vertical(lighten(@pinkLight, 8%), lighten(@pinkLight, 4%));
+  border-color: darken(@pinkLight, 10%);
+}
+
+.tile-orange {
+  #gradient > .vertical(lighten(@orangeLight, 8%), lighten(@orangeLight, 4%));
+  border-color: darken(@orangeLight, 10%);
+}
+
+.tile-earth {
+  #gradient > .vertical(lighten(@earthLight, 8%), lighten(@earthLight, 4%));
+  border-color: darken(@earthLight, 10%);
+}
+
+.tile-forest {
+  #gradient > .vertical(lighten(@forestLight, 8%), lighten(@forestLight, 4%));
+  border-color: darken(@forestLight, 10%);
+}
+
+.tile-yellow {
+  #gradient > .vertical(lighten(@yellowLight, 8%), lighten(@yellowLight, 4%));
+  border-color: darken(@yellowLight, 10%);
+}
+
+.tile-grass {
+  #gradient > .vertical(lighten(@grassLight, 8%), lighten(@grassLight, 4%));
+  border-color: darken(@grassLight, 10%);
+}
+
+
+/* // Miscellaneous brand colors for color-coding stuff
+// -------------------------
+@purpleBase:            #9A4075;
+@purpleLight:           #ebd9e3;
+@purpleDark:            #9a4075;
+@pinkBase:              #c3325f;
+@pinkLight:             #f3d6df;
+@pinkDark:              #c3325f;
+@orangeBase:            #E86D1F;
+@orangeLight:           #fae2d2;
+@orangeDark:            #e86d1f;
+@earthBase:             #984B22;
+@earthLight:            #eadbd3;
+@earthDark:             #984b22;
+@forestBase:            #7F762F;
+@forestLight:           #e5e4d5;
+@forestDark:            #7f762f;
+@yellowBase:            #E3E76B;
+@yellowLight:           #f7f8d2;
+@yellowDark:            #c5ca24;
+@grassBase:             #C0CA55;
+@grassLight:            #e6eabb;
+@grassDark:             #939b41; 
+
+*/

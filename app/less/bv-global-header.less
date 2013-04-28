@@ -1,0 +1,220 @@
+@import "responsive-utilities.less";
+
+// Portal navbar
+// -------------------------
+
+.navbar-portal {
+  color: @navbarPortalText;
+  z-index: 1031;
+
+  .pull-left {
+    margin-right: 10px;
+  }
+
+  .pull-right {
+    margin-left: 10px;
+  }
+
+  .navbar-inner {
+    background: @navbarPortalBackground;
+    border-color: @navbarPortalBackground;
+    border-bottom: 1px solid darken(@navbarPortalBackground, 3%);
+  }
+
+  &.navbar .brand {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .brand, .nav > li > a {
+    color: @navbarPortalLinkColor;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    &:hover {
+      color: @navbarPortalLinkColorHover;
+    }
+  }
+
+  .nav > li > a:focus,
+  .nav > li > a:hover {
+    background-color: @navbarPortalLinkBackgroundHover;
+    color: @navbarPortalLinkColorHover;
+  }
+
+  .nav .active > a,
+  .nav .active > a:hover,
+  .nav .active > a:focus {
+    color: @navbarPortalLinkColorActive;
+    background-color: @navbarPortalLinkBackgroundActive;
+  }
+
+  // Inline text links
+  .navbar-link {
+    color: @navbarPortalLinkColor;
+    &:hover {
+      color: @navbarPortalLinkColorHover;
+    }
+  }
+
+  // Dividers in navbar
+  .divider-vertical {
+    border-left-color: @navbarPortalBackground;
+    border-right-color: @navbarPortalBackgroundHighlight;
+  }
+
+  // Dropdowns
+  .nav li.dropdown.open > .dropdown-toggle,
+  .nav li.dropdown.active > .dropdown-toggle,
+  .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: @navbarPortalLinkBackgroundActive;
+    color: @navbarPortalLinkColorActive;
+  }
+  .nav li.dropdown > .dropdown-toggle .caret {
+    border-top-color: @navbarPortalLinkColor;
+    border-bottom-color: @navbarPortalLinkColor;
+  }
+  .nav li.dropdown.open > .dropdown-toggle .caret,
+  .nav li.dropdown.active > .dropdown-toggle .caret,
+  .nav li.dropdown.open.active > .dropdown-toggle .caret {
+    border-top-color: @navbarPortalLinkColorActive;
+    border-bottom-color: @navbarPortalLinkColorActive;
+  }
+
+  // Navbar search
+  .navbar-search .search-query {
+    color: @textColor;
+    background-color: @navbarPortalSearchBackground;
+    border-color: @navbarPortalSearchBorder;
+    .box-shadow(~"inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15)");
+    .transition(none);
+    .placeholder(@navbarPortalSearchPlaceholderColor);
+
+    // Focus states (we use .focused since IE7-8 and down doesn't support :focus)
+    &:focus,
+    &.focused {
+      color: @grayDark;
+      text-shadow: 0 1px 0 @white;
+      background-color: @navbarPortalSearchBackgroundFocus;
+      .box-shadow(0 0 3px rgba(0,0,0,.15));
+      padding: 4px 14px;
+      border: 1px solid @navbarPortalSearchBorder;
+    }
+  }
+
+  .form-search.input-append {
+    position: relative;
+    .search-query {
+      margin-right: 0;
+      .transition(~"background-color .2s");
+      padding-right: 30px;
+      .box-sizing(content-box);
+      width: auto;
+      height: @baseLineHeight;
+    }
+    .add-on {
+      .border-top-right-radius(@searchBorderRadius);
+      .border-bottom-right-radius(@searchBorderRadius);
+      background: transparent none;
+      border: 0;
+      .box-shadow(none);
+      outline: 0;
+      color: @grayLight;
+      text-shadow: none;
+      position: absolute;
+      right: 5px;
+      z-index: 2;
+      &:hover {
+        background: transparent none;
+        border: 0;
+        .box-shadow(none);
+        outline: 0;
+        color: @grayLight;
+        text-shadow: none;
+      }
+    }
+  }
+
+  // Navbar collapse button
+  .btn-navbar {
+    .buttonBackground(darken(@navbarPortalBackgroundHighlight, 5%), darken(@navbarPortalBackground, 5%));
+  }
+
+  // Refix the global header even in responsive conditions
+  &.navbar-fixed-top {
+    position: fixed;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    .navbar-inner {
+      padding: 0;
+    }
+    .container-fluid {
+      padding-left: @gridGutterWidth;
+      padding-right: @gridGutterWidth;
+    }
+  }
+
+  .btn {
+    .btnColors(@btnGlobalHeaderScheme, @btnGlobalHeaderBackground, @btnGlobalHeaderBackgroundHighlight, @btnGlobalHeaderBorder, @btnGlobalHeaderText);
+    &:hover, &:active, &.active, &:focus {
+      .btnColorsHover(@btnGlobalHeaderBackground, @btnGlobalHeaderBackgroundHighlight, @btnGlobalHeaderBorder, @btnGlobalHeaderText);
+    }
+  }
+
+  .btn-primary {
+    .btnColors(@btnPrimInvScheme, @btnPrimInvBackground, @btnPrimInvBackgroundHighlight, @btnPrimInvBorder, @btnPrimInvText);
+    &:hover, &:active, &.active, &:focus {
+      .btnColorsHover(@btnPrimInvBackground, @btnPrimInvBackgroundHighlight, @btnPrimInvBorder, @btnPrimInvText);
+    }
+  }
+
+  .btn-group {
+    .open .btn.dropdown-toggle {
+      background-color: @btnGlobalHeaderBackground;
+    }
+    > .dropdown-menu {
+      padding: 10px 10px 5px;
+      background: @btnGlobalHeaderBackground; /* TODO */
+      > li {
+        margin-bottom: 5px;
+      }
+        .btn {
+          .btnColors(@btnInverseScheme, @btnInverseBackground, @btnInverseBackgroundHighlight, @btnInverseBorder, @btnInverseText);
+          &:hover, &:active, &.active, &:focus {
+            .btnColorsHover(@btnInverseBackground, @btnInverseBackgroundHighlight, @btnInverseBorder, @btnInverseText);
+          }
+        }
+        .btn-primary {
+          .btnColors(@btnPrimInvScheme, @btnPrimInvBackground, @btnPrimInvBackgroundHighlight, @btnPrimInvBorder, @btnPrimInvText);
+          &:hover, &:active, &.active, &:focus {
+            .btnColorsHover(@btnPrimInvBackground, @btnPrimInvBackgroundHighlight, @btnPrimInvBorder, @btnPrimInvText);
+          }
+        }
+    }
+  }
+
+  .brand {
+    padding-left: 10px;
+    margin-left: 0;
+  }
+
+  .username {
+
+  }
+
+  .clientname {
+    color: @bvNavy30;
+    font-size: 1em;
+  }
+
+}
+
+//
+// Responsive: Landscape phone to desktop/tablet
+// --------------------------------------------------
+
+
+@media (max-width: 767px) {
+  .navbar-portal {
+
+  }
+}

@@ -1,0 +1,34 @@
+.form-search.input-append {
+  position: relative;
+  .search-query {
+    margin-right: 0;
+    padding-right: 30px;
+    display: block;
+    .box-sizing(border-box);
+    height: auto;
+    width: 100%;
+    .border-radius(@searchBorderRadius); // redeclare because of specificity of the type attribute
+  }
+  .add-on {
+    .border-top-right-radius(@searchBorderRadius);
+    .border-bottom-right-radius(@searchBorderRadius);
+    background: transparent none;
+    border: 0;
+    .box-shadow(none);
+    outline: 0;
+    color: @grayLight;
+    text-shadow: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    z-index: 2;
+    &:hover {
+      background: transparent none;
+      border: 0;
+      .box-shadow(none);
+      outline: 0;
+      color: @grayLight;
+      text-shadow: none;
+    }
+  }
+}

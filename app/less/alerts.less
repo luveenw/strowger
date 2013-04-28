@@ -1,0 +1,167 @@
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: @baseLineHeight;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background-color: @warningBackground;
+  #gradient > .vertical(@warningBackground, darken(@warningBackground, 5%));
+  border: 1px solid @warningBorder;
+  .border-radius(@borderRadius);
+  color: @warningText;
+}
+.alert h4 {
+  margin: 0;
+}
+
+// Adjust close link position
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: @baseLineHeight;
+}
+
+
+// Shadow and corners for levitating panels
+// -------------------------
+
+.alert.levitate {
+  .box-shadow(0 5px 10px rgba(0,0,0,.2));
+  .border-radius(@panelBorderRadius);
+}
+
+// Tooltip arrows
+// -------------------------
+
+.alert.tooltip-top, .alert.tooltip-bottom {
+  position: relative;
+  &:before, &:after {
+    border: 10px solid;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    border-color: transparent;
+    content: "\0020";
+  }
+}
+
+.alert.tooltip-top {
+  &:before, &:after {
+    top: -20px;
+  }
+  &:before {
+    border-bottom-color: @warningBorder;
+  }
+  &:after {
+    margin-top: 1px;
+    border-bottom-color: @warningBackground;
+  }
+}
+
+.alert.tooltip-bottom {
+  &:before, &:after {
+    top: auto;
+    bottom: -20px;
+  }
+  &:before {
+    border-top-color: @warningBorder;
+  }
+  &:after {
+    margin-bottom: 1px;
+    border-top-color: @warningBackground;
+  }
+}
+
+// Alternate styles
+// -------------------------
+
+.alert-success {
+  background-color: @successBackground;
+  #gradient > .vertical(@successBackground, darken(@successBackground, 5%));
+  border-color: @successBorder;
+  color: @successText;
+  &.tooltip-top {
+    &:before {
+      border-bottom-color: @successBorder;
+    }
+    &:after {
+      border-bottom-color: @successBackground;
+    }
+  }
+  &.tooltip-bottom {
+    &:before {
+      border-top-color: @successBorder;
+    }
+    &:after {
+      border-top-color: @successBackground;
+    }
+  }
+}
+.alert-danger,
+.alert-error {
+  background-color: @errorBackground;
+  #gradient > .vertical(@errorBackground, darken(@errorBackground, 5%));
+  border-color: @errorBorder;
+  color: @errorText;
+  &.tooltip-top {
+    &:before {
+      border-bottom-color: @errorBorder;
+    }
+    &:after {
+      border-bottom-color: @errorBackground;
+    }
+  }
+  &.tooltip-bottom {
+    &:before {
+      border-top-color: @errorBorder;
+    }
+    &:after {
+      border-top-color: @errorBackground;
+    }
+  }
+}
+.alert-info {
+  background-color: @infoBackground;
+  #gradient > .vertical(@infoBackground, darken(@infoBackground, 5%));
+  border-color: @infoBorder;
+  color: @infoText;
+  &.tooltip-top {
+    &:before {
+      border-bottom-color: @infoBorder;
+    }
+    &:after {
+      border-bottom-color: @infoBackground;
+    }
+  }
+  &.tooltip-bottom {
+    &:before {
+      border-top-color: @infoBorder;
+    }
+    &:after {
+      border-top-color: @infoBackground;
+    }
+  }
+}
+
+
+// Block alerts
+// -------------------------
+
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.alert-block > p,
+.alert-block > ul {
+  margin-bottom: 0;
+}
+.alert-block p + p {
+  margin-top: 5px;
+}

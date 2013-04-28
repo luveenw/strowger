@@ -1,0 +1,146 @@
+/*
+
+bvYellow
+bvForest
+black
+grayDarker
+grayDark
+gray
+grayLight
+grayLighter
+grayLightest
+white
+blue
+blueDark
+green
+red
+yellow
+orange
+pink
+purple
+
+*/
+.swatch-color {
+  line-height: 2em;
+  text-align: center;
+  display: block;
+  padding: 10px;
+}
+.bvNavy {
+  background-color: #003d4c;
+  color: white;
+}
+.bvNavy80 {
+  background-color: #215768;
+  color: white;
+}
+.bvNavy30 {
+  background-color: #b2c4c9;
+}
+.bvGreen {
+  background-color: #00ab8e;
+  color: white;
+}
+.bvGreen80 {
+  background-color: #56b9a9;
+  color: white;
+}
+.bvGreen30 {
+  background-color: #b7e0d9;
+}
+.bvPurple {
+  background-color: #9a4075;
+  color: white;
+}
+.bvRuby {
+  background-color: #991b2d;
+  color: white;
+}
+.bvGrass {
+  background-color: #c0ca55;
+}
+.bvOrange {
+  background-color: #e86d1f;
+  color: white;
+}
+.bvGray {
+  background-color: #797d83;
+  color: white;
+}
+.bvSky {
+  background-color: #65c8cf;
+}
+.bvEarth {
+  background-color: #984b22;
+  color: white;
+}
+.bvGold {
+  background-color: #fdb813;
+}
+.bvYellow {
+  background-color: #e3e76b;
+}
+.bvForest {
+  background-color: #7f762f;
+  color: white;
+}
+.black {
+  background-color: #000000;
+  color: white;
+}
+.grayDarker {
+  background-color: #222222;
+  color: white;
+}
+.grayDark {
+  background-color: #333333;
+  color: white;
+}
+.gray {
+  background-color: #555555;
+  color: white;
+}
+.grayLight {
+  background-color: #888888;
+  color: white;
+}
+.grayLighter {
+  background-color: #dddddd;
+}
+.grayLightest {
+  background-color: #fbfbfb;
+}
+.white {
+  background-color: #ffffff;
+}
+.blue {
+  background-color: #008fb2;
+  color: white;
+}
+.blueDark {
+  background-color: #003d4c;
+  color: white;
+}
+.green {
+  background-color: #00ab8e;
+  color: white;
+}
+.red {
+  background-color: #991b2d;
+  color: white;
+}
+.yellow {
+  background-color: #fdb813;
+}
+.orange {
+  background-color: #e86d1f;
+  color: white;
+}
+.pink {
+  background-color: #c3325f;
+  color: white;
+}
+.purple {
+  background-color: #9a4075;
+  color: white;
+}
