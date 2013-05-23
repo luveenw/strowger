@@ -1,0 +1,53 @@
+<div class="container-fluid fill" style="margin-bottom: 100%;">
+    <style type="text/css">
+        .clientListControl {
+            width: 96%;
+            height: 2em;
+        }
+        .clientEdgeListControl {
+            margin: .5em 0 1em 0;
+            width: 90%;
+        }
+    </style>
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="well sidebar-nav" style="height: 84%; overflow: auto;">
+                <ul class="nav nav-list" >
+                    <li class="nav-header">Clients</li>
+                </ul>
+                <div class="nav nav-list">
+                    <span class="nav-header">
+                        <input type="text"
+                               class="clientListControl"
+                               ng-model="query"
+                               placeholder="search for a client by name...">
+                    </span>
+                </div>
+                <div class="nav nav-list">
+                    <span class="nav-header">
+                        <select ng-model="clientsOrderProp" class="clientListControl">
+                            <option selected value="">Sort by...</option>
+                            <option value="name">Alphabetical</option>
+                            <option value="-numMisconfigured">Misconfigurations</option>
+                            <option value="-numPotentialEdges">Potential Edges</option>
+                        </select>
+                    </span>
+                </div>
+                <ul ng-controller="ClientListCtrl" class="nav nav-list">
+                    <li ng-repeat="client in clients | filter:query | orderBy:clientsOrderProp"
+                        ng-class="{active: $state.includes('clients.details.default') && $routeParams.clientId == client.clientId}">
+                        <a ng-href="#/clients/{{client.clientId}}">
+                            <span>{{client.name}}</span>
+                            <span class="client-notification client-edge">{{client.numPotentialEdges}}</span>
+                            <span class="client-notification client-misconfiguration">{{client.numMisconfigured}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!--/.well -->
+        </div>
+        <div class="span10">
+            <div ng-view="clients.edges"></div>
+            <div ng-view="details"></div>
+        </div>
+    </div>
+</div>

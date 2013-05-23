@@ -1,0 +1,46 @@
+<div class="tabs-left">
+    <ul class="nav nav-tabs nav-stacked" style="height: 84%; overflow-y: auto; width: 150px;">
+        <li class="nav-header">Sources</li>
+        <li>
+            <button class="btn btn-primary clientEdgeListControl"><i class="icon-plus"></i>New source</button>
+        </li>
+        <li>
+            <span class="nav-header">
+                <input type="text"
+                       class="clientListControl"
+                       ng-model="sourceQuery"
+                       placeholder="search for a source by name...">
+            </span>
+        </li>
+        <li ng-repeat="iClient in importClients | filter:sourceQuery | orderBy:iClient.name">
+            <a ng-href="#/edge/{{clientId}}/from_{{iClient.clientId}}">
+                <span>{{client.name}}</span>
+            </a>
+        </li>
+        <!-- <li class="active"><a href="#"><span>Best Buy</span></a></li>
+        <li><a href="#"><span>BestBuy</span></a></li>
+        <li><a href="#"><span>Samsung</span></a></li> -->
+        
+        <li class="nav-header">Targets</li>
+        <li>
+            <button class="btn btn-primary clientEdgeListControl"><i class="icon-plus"></i>New target</button>
+        </li>
+        <li>
+            <span class="nav-header">
+                <input type="text"
+                       class="clientListControl"
+                       ng-model="targetQuery"
+                       placeholder="search for a target by name...">
+            </span>
+        </li>
+        <li ng-repeat="eClient in exportClients | filter:targetQuery | orderBy:eClient.name">
+            <a ng-href="#/edge/{{clientId}}/to_{{eClient.clientId}}">
+                <span>{{client.name}}</span>
+            </a>
+        </li>
+        <!-- <li><a href="#"><span>Best Buy</span></a></li>
+        <li><a href="#"><span>BestBuy</span></a></li>
+        <li><a href="#"><span>Samsung</span></a></li>
+        <li><a href="#"><span>Walmart</span></a></li> -->
+    </ul>
+</div>
